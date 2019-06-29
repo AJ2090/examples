@@ -42,7 +42,7 @@ def push_docker_image() {
             }
 		  
             stage("DEPLOY newly baked image") {
-		env.KUBECONFIG=/tmp/admin.conf
+		env.KUBECONFIG='/tmp/admin.conf'
 		sh """
 		helm upgrade --set image.tag=${env.IMAGE_TAG} --set image.repository=avinash2090/ajguestbook my-book guestexam/guestbook
 		"""
